@@ -13,11 +13,9 @@
   become: true
   tasks:
 
-  - name: installing and updating apache with php
+  - name: database server
     apt:
-      update_cache: yes
-      name:
-        - apache2
-        - libapache2-mod-php
+      name: mariadb-server
       state: latest
-    when: ansible_distribution =="Ubuntu"
+    when: ansible_distribution == "Ubuntu"
+

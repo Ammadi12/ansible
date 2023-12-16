@@ -1,0 +1,17 @@
+---
+
+
+- hosts: all
+  become: true
+  tasks:
+
+
+
+  - name: installing and updating apache with php
+    package:
+      update_cache: yes
+      name:
+        - "{{ package_name }}"
+        - "{{ php_mod }}"
+      state: latest
+
